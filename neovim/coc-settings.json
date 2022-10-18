@@ -15,6 +15,7 @@
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.local/bin/black",
   "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
   "javascript.autoClosingTags": true,
   "typescript.autoClosingTags": true,
   "emmet.includeLanguages": [

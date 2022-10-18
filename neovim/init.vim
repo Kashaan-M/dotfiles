@@ -47,14 +47,14 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep= '>'
 let g:airline#extensions#tabline#left_alt_sep= '|'
 let g:airline#extensions#tabline#formatter= 'unique_tail'
- Create file without opening buffer
+" Create file without opening buffer
 function! CreateInPreview()
   let l:filename = input('please enter filename: ')
   execute 'silent !touch ' . b:netrw_curdir.'/'.l:filename
   redraw!
 endfunction
 
-" Netrw: create file using touch instead of opening a buffer
+" Netrw create file using touch instead of opening a buffer
 function! Netrw_mappings()
   noremap <buffer>% :call CreateInPreview()<cr>
 endfunction
@@ -137,19 +137,18 @@ filetype plugin indent on
 syntax on
 "------------------------------
 
-filetype plugin indent on
 :map \p i(<Esc>$a)<Esc>   "insert parentheses starting at the cursor position and upto end of line
 :map \c i{<Esc>$a}<Esc>   "insert curly brackets starting at the cursor position and upto end of line
 :map \s i[<Esc>$a]<Esc>   "insert square brackets starting at the cursor position and upto end of line
-:map <F2> <Esc>:tabprevious<Esc>
-:map <F3> <Esc>:tabnext<Esc>
+":map <F2> <Esc>:tabprevious<Esc>
+":map <F3> <Esc>:tabnext<Esc>
 packadd vimball
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 " open nerdtree on startup and shift focus to the other window
-autocmd VimEnter * NERDTree 
+ autocmd VimEnter * NERDTree 
 " Put these lines at the very end of your vimrc file.
 
 " Load all plugins now.
