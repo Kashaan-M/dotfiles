@@ -25,5 +25,6 @@
     "typescriptreact",
     "html"
   ],
-  "codeLens.enable": false
+  "codeLens.enable": false,
+  "colors.filetypes": ["*"]
 }

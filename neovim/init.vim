@@ -5,11 +5,11 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'wojciechkepka/vim-github-dark'
 Plug 'sheerun/vim-polyglot'
-Plug 'jiangmiao/auto-pairs'
 Plug 'ap/vim-css-color'
 Plug 'preservim/nerdtree'
 Plug 'danro/rename.vim'
 Plug 'sudar/comments.vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 "github soft theme
@@ -27,7 +27,7 @@ set title
 set ttimeoutlen=0
 set wildmenu
 
-set background=light
+set background=dark
 
 " italics
 let &t_ZH="\e[3m"
@@ -47,6 +47,12 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep= '>'
 let g:airline#extensions#tabline#left_alt_sep= '|'
 let g:airline#extensions#tabline#formatter= 'unique_tail'
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='hard'
+let g:gruvbox_italic=1
+
+
+colorscheme gruvbox
 " Create file without opening buffer
 function! CreateInPreview()
   let l:filename = input('please enter filename: ')
@@ -76,7 +82,7 @@ nnoremap <F6> :8split<CR>:terminal<CR>
 
 " Tabs
 nnoremap <S-Tab> gT
-nnoremap <Tab> gt :NERDTree<CR> <C-W><C-W> 
+nnoremap <Tab> gt 
 nnoremap <silent> <S-t> :tabnew<CR> 
 " Insert Mode remappings
 " Tab enters first auto complete suggestion
@@ -106,7 +112,6 @@ let g:PaperColor_Theme_Options = {
   \     }
   \   }
   \ }
-colorscheme ghdark
 " -------Indentation
 " length of an actual \t character:
 set tabstop=2
@@ -129,10 +134,11 @@ set autoindent
 "set cpoptions+=I
 " try to be smart (increase the indenting level after ‘{’,
 " decrease it after ‘}’, and so on):
-"set smartindent
+set smartindent
 " a stricter alternative which works better for the C language:
 "set cindent
 " use language‐specific plugins for indenting (better):
+set termguicolors
 filetype plugin indent on
 syntax on
 "------------------------------
@@ -146,6 +152,8 @@ packadd vimball
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+" for coc-highlight
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " open nerdtree on startup and shift focus to the other window
  autocmd VimEnter * NERDTree 
