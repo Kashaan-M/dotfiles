@@ -13,7 +13,7 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 "github soft theme
-let g:gh_color="soft"
+"let g:gh_color="soft"
 
 set number
 set clipboard=unnamedplus
@@ -78,6 +78,8 @@ command! -nargs=0 Prettier :call CocAction('runCommand','prettier.formatFile')
 " Normal mode remappings
 nnoremap <F5> :NERDTreeToggle<CR>
 nnoremap <F6> :8split<CR>:terminal<CR>
+nnoremap <F8> :set background=light<CR>
+nnoremap <F9> :set background=dark<CR>
 
 
 " Tabs
@@ -105,13 +107,13 @@ augroup auto_commands
   autocmd FileType scss setlocal iskeyword+=@-@
 augroup END
 
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default.dark': {
-  \       'transparent_background': 0
-  \     }
-  \   }
-  \ }
+"let g:PaperColor_Theme_Options = {
+  ""\   'theme': {
+  ""\     'default.dark': {
+  ""\       'transparent_background': 0
+  ""\     }
+  ""\   }
+  ""\ }
 " -------Indentation
 " length of an actual \t character:
 set tabstop=2
@@ -148,10 +150,10 @@ syntax on
 :map \s i[<Esc>$a]<Esc>   "insert square brackets starting at the cursor position and upto end of line
 ":map <F2> <Esc>:tabprevious<Esc>
 ":map <F3> <Esc>:tabnext<Esc>
-packadd vimball
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"packadd vimball
+"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 " for coc-highlight
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
@@ -161,7 +163,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
-packloadall
+"packloadall
 " Load all of the helptags now, after plugins have been loaded.
 " All messages and errors will be ignored.
 silent! helptags ALL
