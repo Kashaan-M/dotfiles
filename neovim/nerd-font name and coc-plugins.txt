@@ -1,0 +1,12 @@
+nerd-font Name: SauceCodePro Nerd Font 
+
+Names of CoC Plugins
+
+coc-highlight 
+coc-pairs
+coc-json
+coc-prettier
+coc-tsserver
+coc-emmet
+coc-eslint
+coc-css

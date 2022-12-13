@@ -3,17 +3,18 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
-Plug 'wojciechkepka/vim-github-dark'
 Plug 'sheerun/vim-polyglot'
 Plug 'ap/vim-css-color'
 Plug 'preservim/nerdtree'
 Plug 'danro/rename.vim'
 Plug 'sudar/comments.vim'
-Plug 'morhetz/gruvbox'
+Plug 'yggdroot/indentline'
+Plug 'digitaltoad/vim-jade'
+Plug 'sainnhe/sonokai'
 call plug#end()
 
 "github soft theme
-"let g:gh_color="soft"
+let g:gh_color="soft"
 
 set number
 set clipboard=unnamedplus
@@ -26,6 +27,7 @@ set splitbelow splitright
 set title
 set ttimeoutlen=0
 set wildmenu
+set encoding=utf-8
 
 set background=dark
 
@@ -52,7 +54,7 @@ let g:gruvbox_contrast_light='hard'
 let g:gruvbox_italic=1
 
 
-colorscheme gruvbox
+colorscheme sonokai
 " Create file without opening buffer
 function! CreateInPreview()
   let l:filename = input('please enter filename: ')
@@ -133,15 +135,16 @@ set expandtab
 " reproduce the indentation of the previous line:
 set autoindent
 " keep indentation produced by 'autoindent' if leaving the line blank:
-"set cpoptions+=I
+set cpoptions+=I
 " try to be smart (increase the indenting level after ‘{’,
 " decrease it after ‘}’, and so on):
 set smartindent
 " a stricter alternative which works better for the C language:
-"set cindent
+set cindent
 " use language‐specific plugins for indenting (better):
 set termguicolors
 filetype plugin indent on
+filetype indent on
 syntax on
 "------------------------------
 

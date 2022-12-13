@@ -14,8 +14,13 @@
   ],
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.local/bin/black",
+  "prettier.printWidth": 100,
   "prettier.singleQuote": true,
   "prettier.jsxSingleQuote": true,
+  "prettier.trailingComma": "all",
+  "prettier.bracketSpacing": true,
+  "prettier.bracketSameLine": true,
+  "prettier.tabWidth": 2,
   "javascript.autoClosingTags": true,
   "typescript.autoClosingTags": true,
   "emmet.includeLanguages": [
