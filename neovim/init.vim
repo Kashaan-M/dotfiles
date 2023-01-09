@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
+Plug 'wojciechkepka/vim-github-dark'
 Plug 'sheerun/vim-polyglot'
 Plug 'ap/vim-css-color'
 Plug 'preservim/nerdtree'
@@ -10,8 +11,17 @@ Plug 'danro/rename.vim'
 Plug 'sudar/comments.vim'
 Plug 'yggdroot/indentline'
 Plug 'digitaltoad/vim-jade'
+Plug 'morhetz/gruvbox'
 Plug 'sainnhe/sonokai'
+Plug '907th/vim-auto-save'
 call plug#end()
+
+" vim-auto-save plugin 
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_silent = 1  " do not display the auto-save notification
+let g:auto_save_events = ["InsertLeave","TextChanged"] " auto save on text change only
+let g:auto_save_write_all_buffers = 1  " write all open buffers as if you would use :wa
+
 
 "github soft theme
 let g:gh_color="soft"
